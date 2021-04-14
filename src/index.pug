@@ -1,0 +1,260 @@
+section
+  .container
+    nav.navbar.columns
+      button.column.has-text-centered
+        a.link.is-info(href='#grid') Grid
+      button.column.has-text-centered
+        a.link.is-info(href='#sizes') Sizes
+      button.column.has-text-centered
+        img.shadowed(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/170881/Logo.png' style='max-height:90px; margin: -10px 0;     border-radius: 6px;')
+      button.column.has-text-centered
+        a.link.is-info(href='#hides') Hides
+      button.column.has-text-centered
+        a.link.is-info(href='#forms') Forms
+section
+  .container
+    h1#grid.title Grid
+    h2.subtitle A simple way to build columns
+    h3 a h3 example
+    hr
+    .content
+      p
+        | To build a 
+        strong grid
+        | , just:
+      ol
+        li
+          | Add a 
+          code columns
+          |  container
+        li
+          | Add as many 
+          code column
+          |  elements 
+          span.highlight as you want
+    .columns
+      .column
+        p.notification.is-info First column
+      .column
+        p.notification.is-success.shadowed Second column
+      .column
+        p.notification.is-warning Third column
+      .column
+        p.notification.is-danger Fourth column
+    figure.highlight
+      pre.
+        
+    hr
+    h3#sizes.title Sizes
+    .content
+      p
+        | If you want to change the 
+        strong size
+        |  of a single column, you can use one the following classes:
+      ul
+        li
+          code is-half
+        li
+          code is-third
+        li
+          code is-quarter
+      p
+        | The 
+        em other
+        |  columns will fill up the 
+        strong remaining
+        |  space automatically.
+    .columns
+      .column.is-half
+        p.notification.is-info
+          code.html is-half
+      .column
+        p.notification.is-warning Auto
+      .column
+        p.notification.is-danger Auto
+    .columns
+      .column.is-third
+        p.notification.is-info.shadowed
+          code.html is-third
+      .column
+        p.notification.is-success Auto
+      .column
+        p.notification.is-warning Auto
+      .column
+        p.notification.is-success Auto
+      .column
+        p.notification.is-warning Auto
+    .columns
+      .column.is-quarter
+        p.notification.is-info
+          code.html is-quarter
+      .column
+        p.notification.is-success Auto
+    h3.title 12 columns
+    .columns
+      .column.is-2
+        p.notification.is-info
+          code is-2
+      .column
+        p.notification.is-warning.is-centered 1
+      .column
+        p.notification.is-success.is-centered 1
+      .column
+        p.notification.is-warning.is-centered 1
+      .column
+        p.notification.is-success.is-centered 1
+      .column
+        p.notification.is-warning.is-centered 1
+      .column
+        p.notification.is-success.is-centered 1
+      .column
+        p.notification.is-warning.is-centered 1
+      .column
+        p.notification.is-success.is-centered 1
+      .column
+        p.notification.is-warning.is-centered 1
+      .column
+        p.notification.is-success.is-centered 1
+    hr
+    h3#hides.title  Hidden Example 
+    .columns
+      .column
+        p.notification.is-info First column
+      .column.hidden
+        p.notification.is-success Second column
+      .column
+        p.notification.is-warning Third column
+    hr
+    h3#forms.title  Form Example 
+    .columns
+      .column.is-half
+        form.notification.is-info(method='get' action='/html/codes/html_form_handler.cfm')
+          h2 Info
+          p
+            label
+              | Name
+              input(type='text' name='customer_name' required='')
+          p
+            label
+              | Phone
+              input(type='tel' name='phone_number')
+          p
+            label
+              | Email
+              input(type='email' name='email_address')
+          fieldset
+            legend Which taxi do you require?
+            p
+              label
+                input(type='radio' name='taxi' required='' value='car')
+                |  Car
+            p
+              label
+                input(type='radio' name='taxi' required='' value='van')
+                |  Van
+            p
+              label
+                input(type='radio' name='taxi' required='' value='tuktuk')
+                |  Tuk Tuk
+          fieldset
+            legend Extras
+            p
+              label
+                input(type='checkbox' name='extras' value='baby')
+                |  Baby Seat
+            p
+              label
+                input(type='checkbox' name='extras' value='wheelchair')
+                |  Wheelchair Access
+            p
+              label
+                input(type='checkbox' name='extras' value='tip')
+                |  Stock Tip
+          p
+            label
+              | Pickup Date/Time
+              input(type='datetime-local' name='pickup_time' required='')
+          p
+            label
+              | Pickup Place
+              select#pickup_place(name='pickup_place')
+                option(value='' selected='selected') Select One
+                option(value='office') Taxi Office
+                option(value='town_hall') Town Hall
+                option(value='telepathy') We&apos;ll Guess!
+          p
+            label
+              | Dropoff Place
+              input(type='text' name='dropoff_place' required='' list='destinations')
+            datalist#destinations
+              option(value='Airport')
+              option(value='Beach')
+              option(value="Fred Flinstone's House")
+          p
+            label
+              | Special Instructions
+              textarea(name='comments' maxlength='500')
+          p
+            button Submit Booking
+      .column.hidden
+        p.notification.is-success Second column
+      .column
+        p.notification.is-warning Third column
+    .columns
+      .column.has-text-centered
+        .price-item.text-center.bg-white.win-shadow
+          .price-item-header.p-6
+            h1.mb-0 Starter
+            div for small teams
+          .price-item-price.bg-lightSteel.p-5
+            .display3.m-0.text-medium.fg-white
+              small $
+              | 29
+            .fg-white monthly per user
+          .price-item-detail.p-5
+            div Unlimited projects
+            div Unlimited pages
+            div Unlimited disk space
+            div 24 / 7 Free support
+          .price-item-actions.p-5
+            button.button.info STARTED FOR FREE
+            p.text-small.text-muted 7 days free trial
+      .column.has-text-centered
+        .price-item.text-center.bg-white.win-shadow
+          .price-item-header.p-6
+            h1.mb-0 Pro
+            div for larger teams
+          .price-item-price.bg-darkSteel.p-5
+            .display3.m-0.text-medium.fg-white
+              small $
+              | 59
+            .fg-white monthly per user
+          .price-item-detail.p-5
+            div Unlimited projects
+            div Unlimited pages
+            div Unlimited disk space
+            div 24 / 7 Free support
+            div Advanced reporting
+            div Customizable interface
+            div CRM Integration
+          .price-item-actions.p-5
+            button.button.alert.drop-shadow STARTED FOR FREE
+            p.text-small.text-muted 30 days free trial
+      .column
+        .price-item.text-center.bg-white.win-shadow
+          .price-item-header.p-6
+            h1.mb-0.has-text-centered Enterprise
+            div for big teams
+          .price-item-price.bg-lightSteel.p-5
+            .display3.m-0.text-medium.fg-white
+              small $
+              | 99
+            .fg-white monthly per user
+          .price-item-detail.p-5
+            div Unlimited projects
+            div Unlimited pages
+            div Unlimited disk space
+            div For full feature list, call us
+          .price-item-actions.p-5
+            button.button.info STARTED FOR FREE
+            p.text-small.text-muted 90 days free trial
