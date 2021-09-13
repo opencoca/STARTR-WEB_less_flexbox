@@ -334,7 +334,7 @@ form h2 {
   padding: 22px;
   margin: -20px -20px 20px -20px;
 }
-form botton:hover,
+form button:hover,
 form input[type="button"]:hover,
 form input[type="submit"]:hover {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #34caca), to(#30c9c9));
