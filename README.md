@@ -1,6 +1,6 @@
 # Less Flexbox
 
-Version 1.0.0
+Version 1.0.0 [![Netlify Status](https://api.netlify.com/api/v1/badges/dc4b08cc-0efd-4317-afdf-fa345b94fc19/deploy-status)](https://app.netlify.com/sites/silly-archimedes-bf5653/deploys)
 
 Originaly created by our team and published on CodePen.io.
 
