@@ -1,37 +1,38 @@
-.container
-  nav.navbar.columns
-    button.column.has-text-centered
-      a.link.is-info(href="#modals") Modal
-    button.column.has-text-centered
-      a.link.is-info(href="#tabs") Tabs
-    button.column.has-text-centered
-      img.shadowed(
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/170881/Logo.png",
-        style="max-height: 90px; margin: 0; border-radius: 6px"
-      )
-    button.column.has-text-centered
-      a.link.is-info(href="#grid") Grid
-    button.column.has-text-centered
-      a.link.is-info(href="#sizes") Sizes
+nav.navbar.columns
+  button.column.has-text-centered
+    a.link.is-info(href="#modals") Modal
+  button.column.has-text-centered
+    a.link.is-info(href="#tabs") Tabs
+  button.column.has-text-centered
+    img.shadowed(
+      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/170881/Logo.png",
+      style="max-height: 90px; margin: 0; border-radius: 6px"
+    )
+  button.column.has-text-centered
+    a.link.is-info(href="#grid") Grid
+  button.column.has-text-centered
+    a.link.is-info(href="#sizes") Sizes
 
-section
-  .container
-    .columns
+
+.columns
+  .column
+
+    .row
       .column
         h3#modals.title Modals Example
         p Less Flexbox handles models without needing to use any javascript. This simplifies the process of using our syle framework with any any JavaScript framework you want.    
-    .modal-container
-      label.has-text-centered(for='button_1') Click me
-      input.modal-toggle#button_1(type="checkbox", notchecked)
-      .modal-backdrop
-        .modal-content
-          label.modal-close(for="button_1") x
-          h2 Modal title
-          hr
-          p Simple Responsive CSS-Only Modal Demo
-          a.donation(href="#/donate/") Donate Now
-          label.modal-close.button(for="button_1") OK            
-  .container 
+        .modal-container
+          label.has-text-centered(for='button_1') Click me
+          input.modal-toggle#button_1(type="checkbox", notchecked)
+          .modal-backdrop
+            .modal-content
+              label.modal-close(for="button_1") x
+              h2 Modal title
+              hr
+              p Simple Responsive CSS-Only Modal Demo
+              a.donation(href="#/donate/") Donate Now
+              label.modal-close.button(for="button_1") OK            
+
     .columns
       .column
         h3#tabs.title Tabs Example
@@ -101,300 +102,392 @@ section
           | Unfortunately, these tabs have one minor downside: they only come with the limited tab count set at @number_of_tabs . However this isn't necessarily an issue as you can easily change it by editing your the LESS variable.
           hr
 
-section 
-  .container 
-    h1#accordion.title Accordion
-    h2.subtitle Clean collapsing accordions 
-    p using only html and css
-    details
-      summary Thing
+
+        h1#accordion.title Accordion
+        h2.subtitle Clean collapsing accordions 
+        p using only html and css
+        details
+          summary Thing
+          ul
+            li 1
+
+        details
+          summary Summary
+          ul
+            li 1
+
+        details
+          summary Summary
+          ul
+            li 1
+            li 2
+
+        details
+          summary Summary
+          ul
+            li 1
+            li 2
+
+        details
+          summary Summary
+          ul
+            li 1
+            li 2
+            li 3
+
+
+    h1#grid.title Grid
+    h2.subtitle A simple way to build columns
+    h3 a h3 example
+    p TODO Add vertical flexboxes, fillsize, dropdowns, and modals
+    hr
+
+    .content
+      p
+        | To build a 
+        strong grid
+        | , just:
+      ol
+        li
+          | Add a
+          code columns
+          | container
+        li
+          | Add as many
+          code column
+          | elements
+          span.highlight as you want
+
+    .columns
+      .column
+        p.notification.is-info First column
+      .column
+        p.notification.is-success.shadowed Second column
+      .column
+        p.notification.is-warning Third column
+      .column
+        p.notification.is-danger Fourth column
+    figure.highlight highlight example 
+    pre.code # Code Example
+
+    hr
+    h3#sizes.title Sizes
+
+    .content
+      p
+        | If you want to change the 
+        strong size
+        |
+        | of a single column, you can use one the following classes:
       ul
-        li 1
+        li
+          code is-half
+        li
+          code is-third
+        li
+          code is-quarter
+      p
+        | The 
+        em other
+        |
+        | columns will fill up the 
+        strong remaining
+        |
+        | space automatically.
+    .row
+      .column.is-half
+        p.notification.is-info
+          code.html is-half
+      .column
+        p.notification.is-warning Auto
+      .column
+        p.notification.is-danger Auto
+    .columns
+      .column.is-third
+        p.notification.is-info.shadowed
+          code.html is-third
+      .column
+        p.notification.is-success Auto
+      .column
+        p.notification.is-warning Auto
+      .column
+        p.notification.is-success Auto
+      .column
+        p.notification.is-warning Auto
+    .columns
+      .column.is-quarter
+        p.notification.is-info
+          code.html is-quarter
+      .column
+        p.notification.is-success Auto
+    h3.title 12 columns
+    .columns
+      .column.is-2
+        p.notification.is-info
+          code is-2
+      .column
+        p.notification.is-warning.is-centered 1
+      .column
+        p.notification.is-success.is-centered 1
+      .column
+        p.notification.is-warning.is-centered 1
+      .column
+        p.notification.is-success.is-centered 1
+      .column
+        p.notification.is-warning.is-centered 1
+      .column
+        p.notification.is-success.is-centered 1
+      .column
+        p.notification.is-warning.is-centered 1
+      .column
+        p.notification.is-success.is-centered 1
+      .column
+        p.notification.is-warning.is-centered 1
+      .column
+        p.notification.is-success.is-centered 1
+    hr
+    h3#hides.title Hidden Example
+    .columns
+      .column
+        p.notification.is-info First column
+      .column.hidden
+        p.notification.is-success Second column
+      .column
+        p.notification.is-warning Third column
+    hr
 
-    details
-      summary Summary
-      ul
-        li 1
-
-    details
-      summary Summary
-      ul
-        li 1
-        li 2
-
-    details
-      summary Summary
-      ul
-        li 1
-        li 2
-
-    details
-      summary Summary
-      ul
-        li 1
-        li 2
-        li 3
-
-section
-  h1#grid.title Grid
-  h2.subtitle A simple way to build columns
-  h3 a h3 example
-  p TODO Add vertical flexboxes, fillsize, dropdowns, and modals
-  hr
-  .content
-    p
-      | To build a 
-      strong grid
-      | , just:
-    ol
-      li
-        | Add a
-        code columns
-        | container
-      li
-        | Add as many
-        code column
-        | elements
-        span.highlight as you want
-  .columns
-    .column
-      p.notification.is-info First column
-    .column
-      p.notification.is-success.shadowed Second column
-    .column
-      p.notification.is-warning Third column
-    .column
-      p.notification.is-danger Fourth column
-  figure.highlight highlight example 
-  pre.code # Code Example
-
-  hr
-  h3#sizes.title Sizes
-  .content
-    p
-      | If you want to change the
-      strong size
-      |
-      | of a single column, you can use one the following classes:
-    ul
-      li
-        code is-half
-      li
-        code is-third
-      li
-        code is-quarter
-    p
-      | The
-      em other
-      |
-      | columns will fill up the
-      strong remaining
-      |
-      | space automatically.
-  .columns
-    .column.is-half
-      p.notification.is-info
-        code.html is-half
-    .column
-      p.notification.is-warning Auto
-    .column
-      p.notification.is-danger Auto
-  .columns
-    .column.is-third
-      p.notification.is-info.shadowed
-        code.html is-third
-    .column
-      p.notification.is-success Auto
-    .column
-      p.notification.is-warning Auto
-    .column
-      p.notification.is-success Auto
-    .column
-      p.notification.is-warning Auto
-  .columns
-    .column.is-quarter
-      p.notification.is-info
-        code.html is-quarter
-    .column
-      p.notification.is-success Auto
-  h3.title 12 columns
-  .columns
-    .column.is-2
-      p.notification.is-info
-        code is-2
-    .column
-      p.notification.is-warning.is-centered 1
-    .column
-      p.notification.is-success.is-centered 1
-    .column
-      p.notification.is-warning.is-centered 1
-    .column
-      p.notification.is-success.is-centered 1
-    .column
-      p.notification.is-warning.is-centered 1
-    .column
-      p.notification.is-success.is-centered 1
-    .column
-      p.notification.is-warning.is-centered 1
-    .column
-      p.notification.is-success.is-centered 1
-    .column
-      p.notification.is-warning.is-centered 1
-    .column
-      p.notification.is-success.is-centered 1
-  hr
-  h3#hides.title Hidden Example
-  .columns
-    .column
-      p.notification.is-info First column
-    .column.hidden
-      p.notification.is-success Second column
-    .column
-      p.notification.is-warning Third column
-  hr
-
-  h3#forms.title Form Example
-  .columns
-    .column.is-half
-      form.notification.is-info(
-        method="get",
-        action="/html/codes/html_form_handler.cfm"
-      )
-        h2 Info
-        p
-          label
-            | Name
-            input(type="text", name="customer_name", required="")
-        p
-          label
-            | Phone
-            input(type="tel", name="phone_number")
-        p
-          label
-            | Email
-            input(type="email", name="email_address")
-        fieldset
-          legend Which taxi do you require?
+    h3#forms.title Form Example
+    .columns
+      .column.is-half
+        form.notification.is-info(
+          method="get",
+          action="/html/codes/html_form_handler.cfm"
+        )
+          h2 Info
           p
             label
-              input(type="radio", name="taxi", required="", value="car")
-              |
-              | Car
+              | Name
+              input(type="text", name="customer_name", required="")
           p
             label
-              input(type="radio", name="taxi", required="", value="van")
-              |
-              | Van
+              | Phone
+              input(type="tel", name="phone_number")
           p
             label
-              input(type="radio", name="taxi", required="", value="tuktuk")
-              |
-              | Tuk Tuk
-        fieldset
-          legend Extras
+              | Email
+              input(type="email", name="email_address")
+          fieldset
+            legend Which taxi do you require?
+            p
+              label
+                input(type="radio", name="taxi", required="", value="car")
+                |
+                | Car
+            p
+              label
+                input(type="radio", name="taxi", required="", value="van")
+                |
+                | Van
+            p
+              label
+                input(type="radio", name="taxi", required="", value="tuktuk")
+                |
+                | Tuk Tuk
+          fieldset
+            legend Extras
+            p
+              label
+                input(type="checkbox", name="extras", value="baby")
+                |
+                | Baby Seat
+            p
+              label
+                input(type="checkbox", name="extras", value="wheelchair")
+                |
+                | Wheelchair Access
+            p
+              label
+                input(type="checkbox", name="extras", value="tip")
+                |
+                | Stock Tip
           p
             label
-              input(type="checkbox", name="extras", value="baby")
-              |
-              | Baby Seat
+              | Pickup Date/Time
+              input(type="datetime-local", name="pickup_time", required="")
           p
             label
-              input(type="checkbox", name="extras", value="wheelchair")
-              |
-              | Wheelchair Access
+              | Pickup Place
+              select#pickup_place(name="pickup_place")
+                option(value="", selected="selected") Select One
+                option(value="office") Taxi Office
+                option(value="town_hall") Town Hall
+                option(value="telepathy") We&apos;ll Guess!
           p
             label
-              input(type="checkbox", name="extras", value="tip")
-              |
-              | Stock Tip
-        p
-          label
-            | Pickup Date/Time
-            input(type="datetime-local", name="pickup_time", required="")
-        p
-          label
-            | Pickup Place
-            select#pickup_place(name="pickup_place")
-              option(value="", selected="selected") Select One
-              option(value="office") Taxi Office
-              option(value="town_hall") Town Hall
-              option(value="telepathy") We&apos;ll Guess!
-        p
-          label
-            | Dropoff Place
-            input(
-              type="text",
-              name="dropoff_place",
-              required="",
-              list="destinations"
-            )
-          datalist#destinations
-            option(value="Airport")
-            option(value="Beach")
-            option(value="Fred Flinstone's House")
-        p
-          label
-            | Special Instructions
-            textarea(name="comments", maxlength="500")
-        p
-          button Submit Booking
-    .column.hidden
-      p.notification.is-success Second column
-    .column
-      p.notification.is-warning Third column
-  .columns
-    .column.has-text-centered
-      .price-item.text-center.bg-white.win-shadow
-        .price-item-header.p-6
-          h1.mb-0 Starter
-          div for small teams
-          small $ 29
-          div monthly per user
-        .price-item-detail
-          div Unlimited projects
-          div Unlimited pages
-          div Unlimited disk space
-          div 24 / 7 Free support
-        .price-item-actions
-          button.button.info STARTED FOR FREE
-          p.text-small.text-muted 7 days free trial
+              | Dropoff Place
+              input(
+                type="text",
+                name="dropoff_place",
+                required="",
+                list="destinations"
+              )
+            datalist#destinations
+              option(value="Airport")
+              option(value="Beach")
+              option(value="Fred Flinstone's House")
+          p
+            label
+              | Special Instructions
+              textarea(name="comments", maxlength="500")
+          p
+            button Submit Booking
+      .column.hidden
+        p.notification.is-success Second column
+      .column
+        p.notification.is-warning Third column
 
-    .column.has-text-centered
-      .price-item.text-center.shadowed
-        .price-item-header.p-6
-          h1.mb-0 Pro
-          div for larger teams
-        .price-item-price.bg-darkSteel.p-5
-          .display3.m-0.text-medium.fg-white
+    .columns
+
+      .column.has-text-centered
+        .price-item.shadowed
+          .price-item-header
+            h1 Starter
+            h3 for small teams
             small $
-            | 59
-          .fg-white monthly per user
-        .price-item-detail.p-5
-          div Unlimited projects
-          div Unlimited pages
-          div Unlimited disk space
-          div 24 / 7 Free support
-          div Advanced reporting
-          div Customizable interface
-          div CRM Integration
-        .price-item-actions.p-5
-          button.button.alert.drop-shadow STARTED FOR FREE
-          p.text-small.text-muted 30 days free trial
-    .column.has-text-centered
-      .price-item.text-center.bg-white.win-shadow
-        .price-item-header.p-6
-          h1.mb-0.has-text-centered Enterprise
-          div for big teams
-        .price-item-price.bg-lightSteel.p-5
-          .display3.m-0.text-medium.fg-white
-            small $
-            | 99
-          .fg-white monthly per user
-        .price-item-detail.p-5
-          div Unlimited projects
-          div Unlimited pages
-          div Unlimited disk space
-          div For full feature list, call us
-        .price-item-actions.p-5
-          button.button.info STARTED FOR FREE
-          p.text-small.text-muted 90 days free trial
+            | 29
+            div monthly per user
+          .price-item-detail
+            div Unlimited projects
+            div Unlimited pages
+            div Unlimited disk space
+            div 24 / 7 Free support
+          .price-item-actions
+            button.button.info STARTED FOR FREE
+            p.text-small.text-muted 7 days free trial
+
+      .column.has-text-centered.shadowed
+        .price-item.shadowed
+          .price-item-header
+            h1 Pro
+            h3 for larger teams
+          .price-item-price
+            .text-medium
+              small $
+              | 59
+            div monthly per user
+          .price-item-detail
+            div Unlimited projects
+            div Unlimited pages
+            div Unlimited disk space
+            div 24 / 7 Free support
+            div Advanced reporting
+            div Customizable interface
+            div CRM Integration
+          .price-item-actions
+            button.button.alert.drop-shadow STARTED FOR FREE
+            p.text-small.text-muted 30 days free trial
+
+      .column.has-text-centered
+        .price-item.shadowed
+          .price-item-header
+            h1.has-text-centered Enterprise
+            h3 for big teams
+          .price-item-price
+            .text-medium
+              small $
+              | 99
+            div monthly per user
+          .price-item-detail
+            div Unlimited projects
+            div Unlimited pages
+            div Unlimited disk space
+            div For full feature list, call us
+          .price-item-actions
+            button.button.info STARTED FOR FREE
+            p.text-small.text-muted 90 days free trial
+
+    .columns
+      .column
+        .Pricing-box
+          .price-title.spacing-box
+            h1 Regular
+          hr
+          .spacing-box
+            .price
+              span.price-sm $
+              span.price-lg 49
+            .price-tenure per month
+          hr
+          .pricing-features.spacing-grid
+            ul
+              li Full Access
+              li
+                | 1 Domain 
+                strong Free
+              li Source Files
+              li
+                strong 50 User Accounts
+              li 6 Month License
+              li Premium Support
+          hr
+          .spacing-grid
+            a.btn.btn-md.btn-black Sign Up Today
+            
+      .column
+        .Pricing-box.highlight
+          .price-title.spacing-box
+            h1 Standard
+          hr
+          .spacing-box
+            .price
+              span.price-sm $
+              span.price-lg 79
+            .price-tenure per month
+          hr
+          .pricing-features.spacing-grid
+            ul
+              li Full Access
+              li
+                | 1 Domain 
+                strong Free
+              li Source Files
+              li
+                strong 500 User Accounts
+              li 6 Month License
+              li Premium Support
+          hr
+          .spacing-grid
+            a.btn.btn-md.btn-black Sign Up Today
+            
+      .column
+        .Pricing-box
+          .price-title.spacing-box
+            h1 Advanced
+          hr
+          .spacing-box
+            .price
+              span.price-sm $
+              span.price-lg 109
+            .price-tenure per month
+          hr
+          .pricing-features.spacing-grid
+            ul
+              li Full Access
+              li
+                | 1 Domain 
+                strong Free
+              li Source Files
+              li
+                strong 5000 User Accounts
+              li 6 Month License
+              li Free Support
+          hr
+          .spacing-grid
+            a.btn.btn-md.btn-black Sign Up Today
+
+  .column.is-quarter.notification.is-danger
+    p.notification.is-info Side Column
+
+.row
+  .column.notification.is-success
+    p.notification.is-info footer

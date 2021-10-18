@@ -277,7 +277,7 @@ html {
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 1;
-    padding: 10px;
+    padding: 0 0.5rem;
 
     @media screen and (min-width: 769px) {
       &.is {
@@ -291,7 +291,7 @@ html {
 
         &-half {
           .is();
-          width: 50%;
+          width: 49.77778%;
         }
 
         &-third {
@@ -312,13 +312,13 @@ html {
     }
   }
 
-  .columns {
+  .columns,.row {
     margin-left: -10px;
     margin-right: -10px;
     margin-top: -10px;
 
     &:last-child {
-      margin-bottom: -10px;
+      margin-bottom: -2rem;
     }
 
     &:not(:last-child) {
@@ -661,7 +661,7 @@ https://www.w3.org/TR/selectors-3/#general-sibling-combinators
   details {
     background: var(--nc-bg-2);
     box-shadow: 0 .1rem 1rem -.5rem var(--nc-bg-2);
-    margin: 0 auto 0.5rem;
+    margin: 1rem 0.5rem;
     //overflow: hidden;
     transition: .3s all ease;
   }
@@ -701,3 +701,9 @@ https://www.w3.org/TR/selectors-3/#general-sibling-combinators
     margin-bottom: 0;
     padding-bottom: 1rem;
   }
+
+  // Convert most padding, margin, and corners to either classes or mixins
+.Pricing-box {
+    padding: 2em;
+    margin: 2em;
+}
