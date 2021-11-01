@@ -37,7 +37,7 @@ section
       .column
         h3#tabs.title Tabs Example
         p
-        | I've created a CSS-only tab system that has some advantages. The css is id agnostic, so the HTML can be generated server-side scripts like WordPress shortcodes for example !!!
+        | A CSS-only tab system that has some advantages. The css is id agnostic, so the HTML can be generated server-side scripts like WordPress shortcodes for example !!!
         p
           | You only need the list of radio button ids and names.
         .tabbed
@@ -52,24 +52,48 @@ section
             li.tab
               label(for='tab3') Django Crypto
           .tab-content
-            img.circular--square(src='https://source.unsplash.com/200x200/?bitcoin')
-            h4 Bitcoin News
-            p
-              | Bitcoin-U.S dollar are higher in early trading Tuesday, after hitting a six week low overnight and then rebounding today to show resilience against bears' attempts at pushing prices lower with their selling pressure from earlier this month as shown by an exhaustion tail on the daily chart suggesting that these battles may be nearing end until momentum can shift back into favor of bulls which would create additional demand for bitcoins due its stability over time despite recent fluctuations .
+            .row
+              .column.is-2
+                img.circular--square(src='https://source.unsplash.com/300x300/?bitcoin')
+              .column
+                h4 Bitcoin News
+                p Bitcoin-U.S dollar are higher in early trading Tuesday, after hitting a six 
+                  | week low overnight and then rebounding today to show resilience against bears' 
+                  | attempts at pushing prices lower with their selling pressure from earlier this 
+                  | month as shown by an exhaustion tail on the daily chart suggesting that these 
+                  | battles may be nearing end until momentum can shift back into favor of bulls 
+                  | which would create additional demand for bitcoins due its stability over time 
+                  | despite recent fluctuations .
           .tab-content
-            img.circular--square(src='https://source.unsplash.com/200x200/?face,mature')
-            h4 Achilles Gaston Sévère
-            p
-              | Achilles Gaston Sévère as adjunct professor at Harvard University.  Thier research deals with mass communication and culture, as well as AI relations on college campuses . They have written more than two dozen books about these topics which have been translated into numerous languages around the world including Mandarin Chinese by Professor Xie Lianfeng from Fudan University of Beijing.
+            .row
+              .column.is-2
+                img.circular--square(src='https://source.unsplash.com/300x300/?face,mature')
+              .column
+                h4 Achilles Gaston Sévère
+                p
+                  | Achilles Gaston Sévère as adjunct professor at Harvard University.  Thier research 
+                  | deals with mass communication and culture, as well as AI relations on college campuses. 
+                  | They have written more than two dozen books about these topics which have been translated 
+                  | into numerous languages around the world including Mandarin Chinese by Professor Xie 
+                  | Lianfeng from Fudan University of Beijing.
           .tab-content
-            img.circular--square(src='https://source.unsplash.com/200x200/?python,code')
-            h4 Django Crypto
-            p
-              | Ready to take your crypto investing game up a notch? Introducing the Django-cryptocurrencies web wallet for Bitcoin and a few other cryptocurrencies. This sleek, intuitive site will have you invested in no time!
-            p
-              | Have a 9-to-5 but still want access to your cryptocurrency? No problem! The interface of our site has been optimized for mobile devices so checking balances, sending coins, or withdrawing them from your account can be done anytime anywhere--and quickly too.
+            .row
+              .column.is-2
+                img.circular--square(src='https://source.unsplash.com/300x300/?python,code')
+              .column
+                h4 Django Crypto
+                p
+                  | Ready to take your crypto investing game up a notch? Introducing the Django-cryptocurrencies 
+                  | web wallet for Bitcoin and a few other cryptocurrencies. This sleek, intuitive site will have 
+                  | you invested in no time!
+                p
+                  | Have a 9-to-5 but still want access to your cryptocurrency? No problem! The interface of our 
+                  | site has been optimized for mobile devices so checking balances, sending coins, or withdrawing 
+                  | them from your account can be done anytime anywhere--and quickly too.
         p
-          | These tabs are quite easy to use as they dont need absolute positioning and min-heights. They can also be used multiple times in one document without any influence on CSS!
+          | These tabs are quite easy to use as they dont need absolute positioning and min-heights. They can 
+          | also be used multiple times in one document without any influence on CSS!
+
         .tabbed
           input#tab21(type='radio' name='css-tabs2')
           input#tab22(type='radio' name='css-tabs2')
@@ -81,25 +105,82 @@ section
               label(for='tab22') Zombie lipsum
             li.tab
               label(for='tab23') Django Crypto
+
           .tab-content
-            img.circular--square(src='https://source.unsplash.com/200x200/?bitcoin')
-            h4 Bitcoin News
-            p
-              | Bitcoin-U.S dollar are higher in early trading Tuesday, after hitting a six week low overnight and then rebounding today to show resilience against bears' attempts at pushing prices lower with their selling pressure from earlier this month as shown by an exhaustion tail on the daily chart suggesting that these battles may be nearing end until momentum can shift back into favor of bulls which would create additional demand for bitcoins due its stability over time despite recent fluctuations .
+            .row
+              .column.is-2
+                img.circular--square(src='https://source.unsplash.com/200x200/?bitcoin')
+              .column
+                h4 Bitcoin News
+                p
+                  | Bitcoin-U.S dollar are higher in early trading Tuesday, after hitting a six 
+                  | week low overnight and then rebounding today to show resilience against bears' 
+                  | attempts at pushing prices lower with their selling pressure from earlier this 
+                  | month as shown by an exhaustion tail on the daily chart suggesting that these 
+                  | battles may be nearing end until momentum can shift back into favor of bulls 
+                  | which would create additional demand for bitcoins due its stability over time 
+                  | despite recent fluctuations.
+
           .tab-content
-            img.circular--square(src='https://source.unsplash.com/200x200/?face,mature')
-            h4 Achilles Gaston Sévère
-            p
-              | Achilles Gaston Sévère as adjunct professor at Harvard University.  Thier research deals with mass communication and culture, as well as AI relations on college campuses . They have written more than two dozen books about these topics which have been translated into numerous languages around the world including Mandarin Chinese by Professor Xie Lianfeng from Fudan University of Beijing.
+            .row
+              .column.is-3
+                img.circular--square(src='https://source.unsplash.com/200x200/?face,mature')
+                h4 Achilles Gaston Sévère
+                p
+                  | Achilles Gaston Sévère as adjunct professor at Harvard University.  Thier research 
+                  | deals with mass communication and culture, as well as AI relations on college 
+                  | campuses. They have written more than two dozen books about these topics which have 
+                  | been translated into numerous languages around the world including Mandarin Chinese 
+                  | by Professor Xie Lianfeng from Fudan University of Beijing.
+
+              .column.is-3
+                img.circular--square(src='https://source.unsplash.com/200x201/?face,mature')
+                h4 Achilles Gaston Sévère
+                p
+                  | Achilles Gaston Sévère as adjunct professor at Harvard University.  Thier research 
+                  | deals with mass communication and culture, as well as AI relations on college 
+                  | campuses. They have written more than two dozen books about these topics which have 
+                  | been translated into numerous languages around the world including Mandarin Chinese 
+                  | by Professor Xie Lianfeng from Fudan University of Beijing.
+
+              .column.is-3
+                img.circular--square(src='https://source.unsplash.com/201x200/?face,mature')
+                h4 Achilles Gaston Sévère
+                p
+                  | Achilles Gaston Sévère as adjunct professor at Harvard University.  Thier research 
+                  | deals with mass communication and culture, as well as AI relations on college 
+                  | campuses. They have written more than two dozen books about these topics which have 
+                  | been translated into numerous languages around the world including Mandarin Chinese 
+                  | by Professor Xie Lianfeng from Fudan University of Beijing.
+
+              .column.is-3
+                img.circular--square(src='https://source.unsplash.com/200x200/?face')
+                h4 Achilles Gaston Sévère
+                p
+                  | Achilles Gaston Sévère as adjunct professor at Harvard University.  Thier research 
+                  | deals with mass communication and culture, as well as AI relations on college 
+                  | campuses. They have written more than two dozen books about these topics which have 
+                  | been translated into numerous languages around the world including Mandarin Chinese 
+                  | by Professor Xie Lianfeng from Fudan University of Beijing.
+
           .tab-content
-            img.circular--square(src='https://source.unsplash.com/200x200/?python,code')
-            h4 Django Crypto
-            p
-              | Ready to take your crypto investing game up a notch? Introducing the Django-cryptocurrencies web wallet for Bitcoin and a few other cryptocurrencies. This sleek, intuitive site will have you invested in no time!
-            p
-              | Have a 9-to-5 but still want access to your cryptocurrency? No problem! The interface of our site has been optimized for mobile devices so checking balances, sending coins, or withdrawing them from your account can be done anytime anywhere--and quickly too.
+            .row
+              .column.is-2
+                img.circular--square(src='https://source.unsplash.com/200x200/?python,code')
+              .column
+                h4 Django Crypto
+                p
+                  | Ready to take your crypto investing game up a notch? Introducing the Django-cryptocurrencies 
+                  | web wallet for Bitcoin and a few other cryptocurrencies. This sleek, intuitive site will have 
+                  | you invested in no time!
+                p
+                  | Have a 9-to-5 but still want access to your cryptocurrency? No problem! The interface of our 
+                  | site has been optimized for mobile devices so checking balances, sending coins, or withdrawing 
+                  | them from your account can be done anytime anywhere--and quickly too.
           p
-          | Unfortunately, these tabs have one minor downside: they only come with the limited tab count set at @number_of_tabs . However this isn't necessarily an issue as you can easily change it by editing your the LESS variable.
+          | Unfortunately, these tabs have one minor downside: they only come with the limited tab count set at 
+          | @number_of_tabs . However this isn't necessarily an issue as you can easily change it by editing 
+          | your the LESS variable.
           hr
 
 section 
@@ -108,9 +189,10 @@ section
     h2.subtitle Clean collapsing accordions 
     p using only html and css
     details
-      summary Thing
+      summary What's this thing!
+      p It's a detail and summary box!
       ul
-        li 1
+        li We can put any html in here. Even our earlier tabs
 
     details
       summary Summary
