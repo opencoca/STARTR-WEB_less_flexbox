@@ -34,7 +34,8 @@ table,
 textarea,
 ul,
 video {
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
+    display: block;
 }
 
 button,
@@ -221,8 +222,8 @@ code,
 kbd,
 pre,
 samp {
-    background: var(--nc-bg-2);
-    border: 1px solid var(--nc-bg-3);
+    background: var(--nc-bg-3);
+    border: 1px solid var(--nc-bg-2);
     border-radius: 4px;
     padding: 3px 6px;
     font-size: .9rem
@@ -231,6 +232,10 @@ samp {
 kbd {
     border-bottom: 3px solid var(--nc-bg-3)
 }
+
+p {
+    max-width: 80ch;
+  }
 
 pre {
     padding: 1rem 1.4rem;
