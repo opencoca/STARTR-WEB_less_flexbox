@@ -277,17 +277,20 @@ summary {
     font-weight: 700
 }
 
-details[open] {
-    padding-bottom: .75rem
-}
 
-details[open] summary {
-    margin-bottom: 6px
-}
+details[open]>summary::before {
+    transform: rotate(90deg);
+  }
+  
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  details>* {
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+  }
 
-details[open]>:last-child {
-    margin-bottom: 0
-}
 
 dt {
     font-weight: 700
