@@ -383,44 +383,11 @@ h2,
   white-space: nowrap;
 }
 
-form {
-  h2 {
-    text-transform: uppercase;
-    font-weight: 200;
-  }
-
-  input,
-  textarea,
-  select {
-    display: block;
-    width: 100%;
-    background: white;
-    height: 3rem;
-    border-radius: var(--br);
-    border-style: none;
-  }
-
-  & input[type="datetime-local"] {
-    width: inherit;
-    padding: 1rem;
-  }
-
-  & textarea {
-    resize: none;
-    overflow: hidden;
-    height: 6rem;
-  }
-
-  & input[type="radio"],
-  & input[type="checkbox"],
-  & input[type="button"],
-  & input[type="submit"],
-  & button {
-    cursor: pointer;
-
-  }
-
+.uppercase {
+  text-transform: uppercase;
 }
+
+
 
 // Convert most padding, margin, and corners to either classes or mixins
 .Pricing-box {
