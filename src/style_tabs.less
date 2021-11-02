@@ -1,0 +1,111 @@
+// Tab system styling
+
+@number_of_tabs: 3;
+@tab_border_width: 1px;
+
+.circular--square {
+  border-radius: 50%;
+}
+
+.tab>label {
+  background: var(--nc-bg-3);
+  border: @tab_border_width solid var(--nc-bg-3);
+  color: var(--nc-tx-3);
+  cursor: pointer;
+  display: block;
+  //font-size: 12px;
+  margin-bottom: calc(@tab_border_width * -1);
+  padding: 1em;
+  text-transform: uppercase;
+  transition: all 0.7s;
+  transition-timing-function: ease;
+}
+
+.tab-content {
+  color: var(--nc-tx-2);
+  display: none;
+}
+
+.tab:hover label {
+  border-top-color: var(--nc-ac-1);
+  color: var(--nc-ac-tx);
+}
+
+.tabbed {
+  margin: 32px 0;
+  overflow-x: hidden;
+  padding-bottom: 16px;
+}
+
+.tabbed [type="radio"] {
+  display: none;
+}
+
+/*******************************
+Set the max number of tabs 
+
+If this number is less than the 
+number of tabs additional tabs 
+will not work 
+
+The CSS generated takes advatage of 
+sibling combinators see w3 for more info
+https://www.w3.org/TR/selectors-3/#general-sibling-combinators
+********************************/
+
+each(range(@number_of_tabs), {
+    .tabbed [type="radio"]:nth-of-type(@{value}):checked {
+      & ~ .tab-content:nth-of-type(@{value}) {
+        display:block
+      }
+
+      & ~ .tabs .tab:nth-of-type(@{value}) label {
+        background: var(--nc-bg-1);
+        border-bottom-color: var(--nc-bg-1);
+        border-top-color: #b721ff;
+        color: var(--nc-tx-2);
+      }
+    }
+  }
+
+);
+
+.tabs {
+  border-bottom: 1px solid var(--nc-ac-1);
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+/* summary / details */
+
+details {
+  background: var(--nc-bg-2);
+  box-shadow: 0 .1rem 1rem -.5rem var(--nc-bg-2);
+  margin: 1rem 0.5rem;
+  //overflow: hidden;
+  transition: .3s all ease;
+}
+
+summary {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  padding: 1rem;
+  padding-left: 2.2rem;
+  position: relative;
+
+  &::before {
+    border-color: transparent transparent transparent var(--nc-tx-2);
+    border-style: solid;
+    border-width: .4rem;
+    content: '';
+    left: 1rem;
+    position: absolute;
+    top: 1.3rem;
+    transform: rotate(0);
+    transform-origin: .2rem 50%;
+    transition: .25s transform ease;
+  }
+}

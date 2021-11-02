@@ -11,6 +11,9 @@
 // Uncomment to use inline meta style Utilities
 @import "./style_utilities.less";
 
+@import "./style_modal.less";
+@import "./style_tabs.less";
+
 // Uncomment this to draw attention to 
 // on-page SEO issues and inline styles 
 //@import "./style_tidy_up.less";
@@ -24,7 +27,6 @@
 @success: hsl(97, 80%, 66%);
 @warning: hsl(49, 80%, 66%);
 @danger: hsl(4, 80%, 66%);
-@br: var(--br);
 
 html {
   background-color: var(--nc-bg-1);
@@ -66,9 +68,11 @@ section,
     background: inherit;
     font-size: larger;
   }
+
   img {
     width: auto;
   }
+
   a {
     vertical-align: middle;
     padding: 1em 2em;
@@ -258,19 +262,6 @@ h2,
   font-size: 18px;
 }
 
-h3,
-.highlight {
-  font-size: 12px;
-  font-weight: normal;
-  overflow: hidden;
-  padding: 0;
-
-  & pre {
-    overflow: auto;
-    max-width: 100%;
-  }
-}
-
 .column {
   -ms-flex-preferred-size: 0;
   flex-basis: 0;
@@ -349,6 +340,21 @@ h3,
 .highlight {
   background-color: #fdf6e3;
   color: #586e75;
+  font-size: 12px;
+  font-weight: normal;
+  overflow: hidden;
+  padding: 0;
+
+  & pre {
+    overflow: auto;
+    max-width: 100%;
+  }
+
+  h4,
+  h5,
+  h6 {
+    color: var(--black);
+  }
 
   & .s {
     color: #2aa198;
@@ -360,18 +366,6 @@ h3,
 
   & .nt {
     color: #268bd2;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .level-item:not(: last-child) {
-    margin-bottom: 10px;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .pagination>a:not(: first-child) {
-    order: 1;
   }
 }
 
@@ -426,273 +420,6 @@ form {
 
   }
 
-}
-
-// Color variables (appears count calculates by raw css)
-@color0: #ffffff; // Appears 6 times
-@color1: #333333; // Appears 2 times
-@color2: #1e824c; // Appears 2 times
-
-// Width variables (appears count calculates by raw css)
-@width0: 160px; // Appears 2 times
-@width1: 100vw; // Appears 2 times
-@width3: 100%; // Appears 2 times
-
-// Height variables (appears count calculates by raw css)
-@height0: 100vh; // Appears 2 times
-
-.modal-container {
-  padding: 2em 0;
-  width: @width0;
-
-  button,
-  label {
-    cursor: pointer;
-    display: block;
-    background: #446CB3;
-    border-radius: @br;
-    border: 0;
-    box-shadow: 0 5px 5px -5px @color1;
-    color: @color0;
-    font-size: 22px;
-    height: 50px;
-    line-height: 50px;
-    margin: 0 auto;
-    transition: background 0.3s ease-in;
-    width: @width0;
-  }
-
-  .modal-backdrop {
-    height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: opacity 0.2s ease-in;
-    width: 0;
-  }
-
-  .modal-toggle {
-    cursor: pointer;
-    //height: 100%;
-    left: 0;
-    margin: 0;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    width: @width3;
-
-    &:hover~button {
-      background: @color2;
-    }
-
-    &:checked {
-      height: @height0;
-      left: 0;
-      opacity: 0;
-      position: fixed;
-      top: 0;
-      width: @width1;
-      z-index: 9;
-
-      .donation {
-        background-color: #ed1c24 !important;
-        color: @color0  !important;
-        padding: 10px 20px !important;
-      }
-    }
-
-    &:checked~.modal-backdrop {
-      background-color: rgba(0, 0, 0, 0.6);
-      height: @height0;
-      left: 0;
-      opacity: 1;
-      pointer-events: none;
-      position: fixed;
-      top: 0;
-      width: @width1;
-      z-index: 9;
-
-      .modal-content {
-        background-color: @color0;
-        border-radius: @br;
-        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
-        cursor: auto;
-        height: 280px;
-        left: calc(50% - 200px);
-        max-width: 400px;
-        padding: 10px 30px;
-        pointer-events: auto;
-        position: absolute;
-        top: 12%;
-        width: @width3;
-        z-index: 999;
-
-        .modal-close {
-          background: @color0;
-          color: #666666;
-          cursor: pointer;
-          font-size: 16px;
-          position: absolute;
-          right: 2px;
-          text-align: center;
-          top: 0;
-          width: 25px;
-
-          &:hover {
-            color: @color1;
-          }
-
-          &.button {
-            background: #4CAF50;
-            border-radius: @br;
-            color: @color0;
-            font-size: 14px;
-            font-weight: normal;
-            bottom: 10px;
-            right: 10px;
-            top: initial;
-            width: 50px;
-
-            &:hover {
-              background: @color2;
-              color: @color0;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media(max-width :400px) {
-  .modal-container modal-toggle:checked~.modal-backdrop .modal-content {
-    left: 0;
-  }
-}
-
-// Tab system styling
-
-@number_of_tabs: 3;
-@tab_border_width: 1px;
-
-.circular--square {
-  border-radius: 50%;
-}
-
-.tab>label {
-  background: var(--nc-bg-3);
-  border: @tab_border_width solid var(--nc-bg-3);
-  color: var(--nc-tx-3);
-  cursor: pointer;
-  display: block;
-  //font-size: 12px;
-  margin-bottom: calc(@tab_border_width * -1);
-  padding: 1em;
-  text-transform: uppercase;
-  transition: all 0.7s;
-  transition-timing-function: ease;
-}
-
-.tab-content {
-  color: var(--nc-tx-2);
-  display: none;
-}
-
-.tab:hover label {
-  border-top-color: var(--nc-ac-1);
-  color: var(--nc-ac-tx);
-}
-
-.tabbed {
-  margin: 32px 0;
-  overflow-x: hidden;
-  padding-bottom: 16px;
-}
-
-.tabbed [type="radio"] {
-  display: none;
-}
-
-/*******************************
-Set the max number of tabs 
-
-If this number is less than the 
-number of tabs additional tabs 
-will not work 
-
-The CSS generated takes advatage of 
-sibling combinators see w3 for more info
-https://www.w3.org/TR/selectors-3/#general-sibling-combinators
-********************************/
-
-each(range(@number_of_tabs), {
-    .tabbed [type="radio"]:nth-of-type(@{value}):checked {
-      & ~ .tab-content:nth-of-type(@{value}) {
-        display:block
-      }
-
-      & ~ .tabs .tab:nth-of-type(@{value}) label {
-        background: var(--nc-bg-1);
-        border-bottom-color: var(--nc-bg-1);
-        border-top-color: #b721ff;
-        color: var(--nc-tx-2);
-      }
-    }
-  }
-
-);
-
-.tabs {
-  border-bottom: 1px solid var(--nc-ac-1);
-  display: flex;
-  list-style: none;
-  padding: 0;
-}
-
-/* summary / details */
-
-details {
-  background: var(--nc-bg-2);
-  box-shadow: 0 .1rem 1rem -.5rem var(--nc-bg-2);
-  margin: 1rem 0.5rem;
-  //overflow: hidden;
-  transition: .3s all ease;
-}
-
-summary {
-  outline: none;
-  border: none;
-  cursor: pointer;
-  display: block;
-  padding: 1rem;
-  padding-left: 2.2rem;
-  position: relative;
-
-  &::before {
-    border-color: transparent transparent transparent var(--nc-tx-2);
-    border-style: solid;
-    border-width: .4rem;
-    content: '';
-    left: 1rem;
-    position: absolute;
-    top: 1.3rem;
-    transform: rotate(0);
-    transform-origin: .2rem 50%;
-    transition: .25s transform ease;
-  }
-}
-
-
-details[open]>summary::before {
-  transform: rotate(90deg);
-}
-
-details summary::-webkit-details-marker {
-  display: none;
-}
-
-details>* {
-  margin-bottom: 0;
-  padding-bottom: 1rem;
 }
 
 // Convert most padding, margin, and corners to either classes or mixins
