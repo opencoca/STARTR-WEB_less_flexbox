@@ -1,25 +1,30 @@
 section
   .container
-    nav.navbar.columns
-      button.column.has-text-centered
-        a.link.is-info(href="#modals") Modal
-      button.column.has-text-centered
-        a.link.is-info(href="#tabs") Tabs
-      button.column.has-text-centered
-        img.shadowed(
-          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/170881/Logo.png",
-          style="max-height: 90px; margin: 0; border-radius: 6px"
-        )
-      button.column.has-text-centered
-        a.link.is-info(href="#grid") Grid
-      button.column.has-text-centered
-        a.link.is-info(href="#sizes") Sizes
+    nav.navbar
+      h1.hidden Navbar
+      .columns
+        button.column.has-text-centered
+          a.link.is-info(href="#modals") Modal
+        button.column.has-text-centered
+          a.link.is-info(href="#tabs") Tabs
+        button.column.has-text-centered
+          img.shadowed(
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/170881/Logo.png",
+            style="max-height: 90px; margin: 0; border-radius: 6px"
+          )
+        button.column.has-text-centered
+          a.link.is-info(href="#grid") Grid
+        button.column.has-text-centered
+          a.link.is-info(href="#sizes") Sizes
 
 section
   .container
-    .columns
+    .row
       .column
-        h3#modals.title Modals Example
+        h1#into Less Flexbox
+    .row
+      .column
+        h2#modals.title Modals Example
         p Less Flexbox handles models without needing to use any javascript. This simplifies the process of using our syle framework with any any JavaScript framework you want.    
     .modal-container
       label.has-text-centered(for='button_1') Click me
@@ -27,7 +32,7 @@ section
       .modal-backdrop
         .modal-content
           label.modal-close(for="button_1") x
-          h2 Modal title
+          h3 Modal title
           hr
           p Simple Responsive CSS-Only Modal Demo
           a.donation(href="#/donate/") Donate Now
@@ -35,7 +40,7 @@ section
   .container 
     .columns
       .column
-        h3#tabs.title Tabs Example
+        h2#tabs.title Tabs Example
         p
         | A CSS-only tab system that has some advantages. The css is id agnostic, so the HTML can be generated server-side scripts like WordPress shortcodes for example !!!
         p
