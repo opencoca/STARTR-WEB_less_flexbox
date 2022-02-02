@@ -1,46 +1,16 @@
-nav.navbar.columns
-  button.column.--text-centered
-    a.link.is-info(href="#modals") Modal
-  button.column.--text-centered
-    a.link.is-info(href="#tabs") Tabs
-  button.column.--text-centered
-    img.shadowed(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/170881/Logo.png" alt="Logo")
-  button.column.--text-centered
-    a.link.is-info(href="#grid") Grid
-  button.column.--text-centered
-    a.link.is-info(href="#sizes") Sizes
+include mixins/youtube.pug
 
+include includes/navbar-1.pug
 
 .container
   .columns
     .column
 
       .row
-        .column.--text-centered
-          h3#modals.title Modals Example
-          p Less Flexbox handles models without needing to use any javascript. 
-            | This simplifies the process of using our syle framework with any any 
-            | JavaScript framework you want.    
-          .modal-container.--text-centered
-            label.--text-centered(for='button_1') Click me
-            input.modal-toggle#button_1(type="checkbox", notchecked)
-            .modal-backdrop
-              .modal-content
-                label.modal-close(for="button_1") x
-                h2 Modal title
-                hr
-                p Simple Responsive CSS-Only Modal Demo
-                a.donation(href="#/donate/") Donate Now
-                label.modal-close.button(for="button_1") OK            
+        +youtube('https://www.youtube.com/embed/OhCzX0iLnOc')
 
-      .columns
+      .row
         .column
-          h3#tabs.title Tabs Example
-          p
-            | A CSS-only tab system that has some advantages. The css is id agnostic, so the HTML 
-            | can be generated server-side scripts like WordPress shortcodes for example !!!
-          p
-            | You only need the list of radio button ids and names.
           .tabbed
             input#tab1(type='radio' name='css-tabs' checked)
             input#tab2(type='radio' name='css-tabs')
@@ -51,7 +21,7 @@ nav.navbar.columns
               li.tab
                 label(for='tab2') Speakers
               li.tab
-                label(for='tab3') Downloads
+                label(for='tab3') Agenda
             .tab-content
               .row
                 .column.is-3
@@ -59,18 +29,24 @@ nav.navbar.columns
                 .column
                   h4 Welcolme
                   p
-                    | This year more than ever Bitcoin-U.S dollar are higher, after hitting a 
-                    | six week low overnight and then rebounding today to show resilience 
-                    | against bears' attempts at pushing prices lower with their selling pressure 
-                    | from earlier this month as shown by an exhaustion tail on the daily chart 
-                    | suggesting that these battles may be nearing end until momentum can shift 
-                    | back into favor of bulls which would create additional demand for bitcoins 
-                    | due its stability over time despite recent fluctuations .
+                    | AI technology continues to develop at a rapid pace, many experts are warning about 
+                    | the dangers of artificial intelligence. Some people fear that AI will become smarter 
+                    | than humans and take over the world, while others are concerned about the potential 
+                    | for misuse and abuse of AI technology.
+                  p
+                    | Interestingly, many of the dangers associated with AI are not what you would expect. 
+                    | For example, one of the dangers of AI is that it could lead to widespread weird 
+                    | employment. With so many jobs being replaced by machines, there will be a lot of 
+                    | people who are only able to find odd work.  AI could also have a negative impact on 
+                    | our mental health. With more and more people interacting with AI technology, we could 
+                    | see an increase in mental health issues such as depression, anxiety, and AI addiction.
             .tab-content
               .row
                 .column.is-3
                   img.circular--square(src='https://source.unsplash.com/200x200/?face,mature' alt="face")
                 .column
+                  include includes/user-cards.pug
+
                   div(
                     class="lg:p-8",
                     x-data="alpineInstance()",
@@ -109,62 +85,7 @@ nav.navbar.columns
                   h4 Downloads
           p
             | These tabs are quite easy to use as they dont need absolute positioning and min-heights. They can also be used multiple times in one document without any influence on CSS!
-          .tabbed
-            input#tab21(type='radio' name='css-tabs2')
-            input#tab22(type='radio' name='css-tabs2')
-            input#tab23(type='radio' name='css-tabs2' checked)
-            ul.tabs
-              li.tab
-                label(for='tab21') Bitcoin News
-              li.tab
-                label(for='tab22') Zombie lipsum
-              li.tab
-                label(for='tab23') Django Crypto
-            .tab-content
-              .row
-                .column.is-4
-                  img.circular--square(src='https://source.unsplash.com/300x300/?bitcoin' alt="bitcoin")
-                .column
-                  h4 Bitcoin News
-                  p
-                    | Bitcoin-U.S dollar are higher in early trading Tuesday, after hitting a 
-                    | six week low overnight and then rebounding today to show resilience 
-                    | against bears' attempts at pushing prices lower with their selling pressure 
-                    | from earlier this month as shown by an exhaustion tail on the daily chart 
-                    | suggesting that these battles may be nearing end until momentum can shift 
-                    | back into favor of bulls which would create additional demand for bitcoins 
-                    | due its stability over time despite recent fluctuations .
-            .tab-content
-              .row
-                .column.is-4
-                  img.circular--square(src='https://source.unsplash.com/301x301/?face,mature' alt="face")
-                .column
-                  h4 Achilles Gaston Sévère
-                  p
-                    | Achilles Gaston Sévère as adjunct professor at Harvard University.  
-                    | Thier research deals with mass communication and culture, as well 
-                    | as AI relations on college campuses . They have written more than 
-                    | two dozen books about these topics which have been translated into 
-                    | numerous languages around the world including Mandarin Chinese by 
-                    | Professor Xie Lianfeng from Fudan University of Beijing.
-            .tab-content
-              .row
-                .column
-                  h4 Django Crypto
-                  p
-                    | Ready to take your crypto investing game up a notch? Introducing the 
-                    | Django-cryptocurrencies web wallet for Bitcoin and a few other cryptocurrencies. 
-                    | This sleek, intuitive site will have you invested in no time!
-                  p
-                    | Have a 9-to-5 but still want access to your cryptocurrency? No problem! The 
-                    | interface of our site has been optimized for mobile devices so checking balances, 
-                    | sending coins, or withdrawing them from your account can be done anytime anywhere
-                    | -- and quickly too!
-                .column.is-4.--text-centered
-                  img.circular--square(src='https://source.unsplash.com/300x300/?python,code' alt="python code")
-
-            p Unfortunately, these tabs have one minor downside: they only come with the limited tab count set at @number_of_tabs . However this isn't necessarily an issue as you can easily change it by editing your the LESS variable.
-
+         
           h1#accordion.title Accordion
           h2.subtitle Clean collapsing accordions 
           p using only html and css
@@ -549,7 +470,97 @@ nav.navbar.columns
               a.btn.btn-md.btn-black Sign Up Today
 
     .column.is-quarter.notification.is-danger
-      p.notification.is-info Side Column
+       .tabbed
+            input#tab21(type='radio' name='css-tabs2')
+            input#tab22(type='radio' name='css-tabs2')
+            input#tab23(type='radio' name='css-tabs2' checked)
+            ul.tabs
+              li.tab
+                label(for='tab21') Chat
+              li.tab
+                label(for='tab22') Notes
+              li.tab
+                label(for='tab23') Upcoming
+            .tab-content
+              .row
+                .column
+                  h4 Chat
+                  img.circular--square(src='https://source.unsplash.com/300x300/?chat' alt="chat").column.is-3
+                  p Fuduwahluz
+                  p 20 hours ago
+                  p 735
+                  p LeBrenn
+                  p 18 hours ago
+                  p i like how 95% of computer innovations are just "this is annoying, lets spend 7 years making this easier for somebody"
+                  p 191
+                  p Rae
+                  p 20 hours ago
+                  p Do a video on open source licenses and their differences!
+                  p 346
+                  p REPLY
+                  p 21 hours ago
+                  p What an amazing ending!
+                  p 354
+                  p REPLY
+                  p 20 hours ago (edited)
+                  p YouTube : Removes Dislike Button  Fireship : Finally I can post this video without consequences
+                  p 1K
+                  p REPLY
+                  p 20 hours ago
+                  p I DID not expect that ending, you are a genius.
+                  p 121
+                  p REPLY
+                  p 20 hours ago
+                  p Impeccable timing. I just finished watching The Imitation Game not even 10 minutes before seeing this on my feed.
+                  p 25
+                  p REPLY
+                  p 16 hours ago
+                  p I think I’ll write my next backend web server in HTML and CSS
+                  p 23
+                  p REPLY
+                  p Neo Mind
+                  p 20 hours ago
+                  p Well that was an unexpected cliffhanger!!
+                  p 24
+                  p REPLY
+                  p Eric
+                  p 21 hours ago
+                  p HTML + CSS is Turing complete. Thanks for making me realize this
+                  p 149
+                  p REPLY
+                  p Imerence
+                  p 18 minutes ago
+                  p This has been the most bizarre, mind blowing, shocking plot twist I've ever experienced.
+
+            .tab-content
+              .row
+                .column
+                  h4 Achilles Gaston Sévère
+                  img.circular--square(src='https://source.unsplash.com/301x301/?face,mature' alt="face").column.is-6
+                  p
+                    | Achilles Gaston Sévère as adjunct professor at Harvard University.  
+                    | Thier research deals with mass communication and culture, as well 
+                    | as AI relations on college campuses . They have written more than 
+                    | two dozen books about these topics which have been translated into 
+                    | numerous languages around the world including Mandarin Chinese by 
+                    | Professor Xie Lianfeng from Fudan University of Beijing.
+            .tab-content
+              .row
+                .column
+                  h4 Django Crypto
+                  p
+                    | Ready to take your crypto investing game up a notch? Introducing the 
+                    | Django-cryptocurrencies web wallet for Bitcoin and a few other cryptocurrencies. 
+                    | This sleek, intuitive site will have you invested in no time!
+                  p
+                    | Have a 9-to-5 but still want access to your cryptocurrency? No problem! The 
+                    | interface of our site has been optimized for mobile devices so checking balances, 
+                    | sending coins, or withdrawing them from your account can be done anytime anywhere
+                    | -- and quickly too!
+                .column.is-4.--text-centered
+                  img.circular--square(src='https://source.unsplash.com/300x300/?python,code' alt="python code")
+
+
 
 section
   .container
